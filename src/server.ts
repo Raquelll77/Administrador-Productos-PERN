@@ -3,6 +3,6 @@ import router from './router';
 
 const server = express()
 
-server.use('/', router)
+server.use('/api/products', router)
 
 export default server

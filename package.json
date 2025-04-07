@@ -17,5 +17,13 @@
   },
   "dependencies": {
     "express": "^4.21.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raquelll77/rest_api_node_ts_server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Raquelll77/rest_api_node_ts_server/issues"
+  },
+  "homepage": "https://github.com/Raquelll77/rest_api_node_ts_server#readme"
 }
