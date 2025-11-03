@@ -18,7 +18,7 @@ router.patch('/', (req, res)=> {
 })
 
 router.delete('/', (req, res)=> {
-    res.json('desde PATCH')
+    res.json('desde DELETE')
 })
 
 export default router
