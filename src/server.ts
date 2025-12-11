@@ -17,7 +17,12 @@ async function connectDB(){
 connectDB()
 
 
+//instancia de express
 const server = express()
+
+
+//leer datos de formularios
+server.use(express.json())
 
 //routing
 //
