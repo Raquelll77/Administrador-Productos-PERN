@@ -8,5 +8,5 @@ export const createProduct = async (req : Request, res : Response)=> {
 
     //almacenar en la base de datos
     product.save()
-    res.json('desde POST')
+    res.json({data: product})
 }
