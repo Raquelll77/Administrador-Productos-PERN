@@ -13,7 +13,14 @@ export const createProduct = async (req : Request, res : Response)=> {
 
 
     //validacion 
-    await check('name').notEmpty().withMessage('El nombre del Producto no puede ir vacio').run(req)
+    await check('name')
+        .notEmpty().withMessage('El nombre del Producto no puede ir vacio')
+        .run(req)
+    await check('price')
+        .isNumeric().withMessage('Valor no valido')
+        .notEmpty().withMessage('El precio del Producto no puede ir vacio')
+        .custom(value =>value >0).withMessage('Precio no válido')
+        .run(req)
 
     let errors = validationResult(req)
     if(!errors.isEmpty()){
