@@ -7,6 +7,7 @@ export const createProduct = async (req : Request, res : Response)=> {
     const product = new Product(req.body)
 
     //almacenar en la base de datos
-    product.save()
-    res.json({data: product})
+    const savedProduct = await product.save()
+    
+    res.json({data: savedProduct})
 }
