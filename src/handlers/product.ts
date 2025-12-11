@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import {check, validationResult} from 'express-validator'
+import {validationResult} from 'express-validator'
 import Product from "../models/Product.model"
 
 //siempre que interactuamos con los modelos las funciones tienen que ser asincronas detener el codigo hasta obtener resultados
@@ -12,15 +12,6 @@ export const createProduct = async (req : Request, res : Response)=> {
     // res.json({data: savedProduct})
 
 
-    //validacion 
-    await check('name')
-        .notEmpty().withMessage('El nombre del Producto no puede ir vacio')
-        .run(req)
-    await check('price')
-        .isNumeric().withMessage('Valor no valido')
-        .notEmpty().withMessage('El precio del Producto no puede ir vacio')
-        .custom(value =>value >0).withMessage('Precio no válido')
-        .run(req)
 
     let errors = validationResult(req)
     if(!errors.isEmpty()){
